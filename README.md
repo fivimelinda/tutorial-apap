@@ -16,4 +16,4 @@ diakses?
 <br>http://localhost:8080/restoran/view?idRestoran=1
 4. Tambahkan 1 contoh restoran lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/restoran/viewall, apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
 <br>Ditampilkan informasi semua restoran yang telah ditambahkan.
-![Bukti Screenshot](BuktiScreenshot.PNG)
+![Bukti Screenshot](gopud/BuktiScreenshot.PNG)
