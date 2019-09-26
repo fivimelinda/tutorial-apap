@@ -39,7 +39,6 @@ public class MenuController {
 		return "add-menu";
 	}
 	
-	//CHECCKKK
 	//API yang digunakan untuk menuju halaman form change menu
 	@RequestMapping(value ="menu/change/{idMenu}", method = RequestMethod.GET)
 	public String changeMenuFormPage(@PathVariable Long idMenu, Model model) {
@@ -56,5 +55,26 @@ public class MenuController {
 		model.addAttribute("menu", newMenuData);
 		return "change-menu";
 	}
-	//CHECKKKK
+	
+
+	@RequestMapping(path="/menu/delete/id/{idMenu}")
+	public String deleteRestoran(@PathVariable("idMenu") Long idMenu, Model model) {
+		try{
+			//Mengambil objek RestoranModel yang dituju
+			MenuModel deleteMenu = menuService.getMenuByIdMenu(idMenu).get();
+			
+			//Add model restoran ke "resto" untuk dirender
+			model.addAttribute("menu", deleteMenu);
+			//Hapus restoran
+			menuService.deleteMenu(deleteMenu);
+			
+			//Return update telepon template
+			return "delete-menu";
+		}
+		catch (Exception e) {
+			return "resto-not-found";
+		}	
+	}
+	
+	
 }

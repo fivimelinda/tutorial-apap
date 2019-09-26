@@ -74,12 +74,9 @@ public class RestoranController {
 	public String changeRestoranFormPage(@PathVariable Long idRestoran, Model model) {
 		//mengambil existing data restoran
 		RestoranModel existingRestoran = restoranService.getRestoranByIdRestoran(idRestoran).get();
-		if (existingRestoran == null) {
-			return "resto-not-found";
-		} else {
-			model.addAttribute("restoran", existingRestoran);
-			return "form-change-restoran";
-		}
+		model.addAttribute("restoran", existingRestoran);
+		return "form-change-restoran";
+		
 	}
 	
 	//API yang digunakan untuk submit form change restoran
@@ -88,6 +85,7 @@ public class RestoranController {
 		RestoranModel newRestoranData = restoranService.changeRestoran(restoran);
 		model.addAttribute("restoran", newRestoranData);
 		return "change-restoran";
+		
 	}
 	
 	//URL mapping view
@@ -122,8 +120,7 @@ public class RestoranController {
 		}
 		catch (Exception e) {
 			return "resto-not-found";
-		}
-			
+		}	
 	}
 	
 //	//URL mapping add

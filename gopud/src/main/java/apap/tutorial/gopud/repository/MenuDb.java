@@ -11,7 +11,7 @@ import apap.tutorial.gopud.model.RestoranModel;
 @Repository
 public interface MenuDb extends JpaRepository<MenuModel, Long> {
 	List<MenuModel> findByRestoranIdRestoran(Long restoranId);
-	//CHECK
+	
 	Optional<MenuModel> findById(Long idMenu);
 
 }

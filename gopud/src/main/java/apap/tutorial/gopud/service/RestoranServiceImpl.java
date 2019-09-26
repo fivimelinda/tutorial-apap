@@ -49,7 +49,9 @@ public class RestoranServiceImpl implements RestoranService {
 
 	@Override
 	public void deleteRestoran(RestoranModel restoran) {
-		restoranDb.delete(restoran);
+		if (restoran.getListMenu().isEmpty()) {
+			restoranDb.delete(restoran);
+		}
 		
 	}
 }
