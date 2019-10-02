@@ -25,3 +25,12 @@ diakses?
 3. JPA adalah cara untuk mempertahankan objek ke dalam relational database. JPA memiliki 2 bagian yaitu subsistem untuk memetakan class ke tabel relasional dan subsistem untuk mengelola entity seperti mengakses objek, menjalankan query dan lain-lain.
 4. Di class MenuModel saat mendefinisikan atribut restoran disebutkan annotation ManyToOne, dan di class RestoranModel saat mendefinisikan atribut listMenu disebutkan annotation OneToMany. Artinya relasi antara restoran dan menu adalah 1 restoran dapat memiliki banyak menu dan tiap menu dimiliki 1 restoran.
 5. FetchType.EAGER akan meminta Hibernate mendapatkan semua elemen relasinya ketika mengambil root entity (default untuk relasi to-one). Sedangkan FetchType.LAZY hanya akan menginisiasi dan meload data yang diminta ke dalam memory ketika dipanggil secara eksplisit (default untuk relasi to-many). <br> JPA menyediakan javax.persistence.CascadeType untuk membangun dependency sehingga ketika suatu operasi diterapkan pada sebuah entity, operasi tersebut akan berlaku untuk entity lain juga yang terkait dengannya. Untuk CascadeType.ALL maka akan diberlakukan semua operasi cascade (PERSIST, MERGE, DETACH, REFRESH, REMOVE) pada entity yang terkait dengan parent entity.
+
+**Jawaban Pertanyaan Tutorial 4:**
+1. Pada nomer 2 dipelajari bagaimana menerapkan aspek dinamis pada fragment. Tahapan yang dilakukan yaitu pada fragment.html di dalam tag nav untuk th:fragment valuenya menjadi "navbar (brand)". Kemudian di dalam tag a ditambahkan "th:text="${brand}". value brand ini nantinya akan digantikan sesuai nilai brand yang diisikan di halaman html. Misal pada home.html dalam tag nav dituliskan "(brand='Home')" maka nantinya tulisan yang muncul di navbar adalah "Home".
+2. Pada nomor 3 dipelajari bagaimana meng-handle input multiple yaitu dapat melakukan delete dan insert dalam banyak row untuk menu sekaligus. Tahapan yang dilakukan yaitu  menambahkan method-method di menu controller untuk menambah row, menghapus row, dan submit/menyimpan menu yang telah diisikan. Kemudian pada form-add-menu.html membuat tabel dan menambahkan input field, serta menambahkan tombol add row dan hapus seperti pada view-restoran.html
+3. `<div th:include="..."> content here </div>` artinya fragment akan dimasukkan dalam tag <br>
+`<div th:replace="..."> content here </div>` artinya fragment akan digantikan oleh content.
+4. contoh penggunaan <br>
+`<form th:action="@{/restoran/add}" th:object="${restoran}" method="POST">` <br>
+th:object digunakan untuk menentukan objek tempat data akan diletakkan
