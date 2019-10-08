@@ -51,16 +51,16 @@ public class RestoranController {
 	@RequestMapping(path = "/restoran/view", method = RequestMethod.GET)
 	public String view(
 			//Request parameter untuk dipass
-			@RequestParam(value = "idRestoran") String idRestoran, Model model
+			@RequestParam(value = "idRestoran") Long idRestoran, Model model
 			) {
 		try {
 			//Mengambil objek RestoranModel yang dituju
-			RestoranModel restoran = restoranService.getRestoranByIdRestoran(Long.parseLong(idRestoran)).get();
+			RestoranModel restoran = restoranService.getRestoranByIdRestoran(idRestoran).get();			
+			List<MenuModel> menuList = menuService.getListMenuOrderByHargaAsc(restoran.getIdRestoran()); /////
+			restoran.setListMenu(menuList);
+			// model.addAttribute("menuList", menuList);
 			//Add model restoran ke "resto" untuk dirender
 			model.addAttribute("resto", restoran);
-			
-			List<MenuModel> menuList = menuService.findAllMenuByIdRestoran(restoran.getIdRestoran());
-			model.addAttribute("menuList", menuList);
 			model.addAttribute("isMenuListEmpty", menuList.isEmpty());
 			return "view-restoran";
 		} catch (Exception e) {

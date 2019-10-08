@@ -2,9 +2,13 @@
 <html xmlns:th="http://thymeleaf.org">
 	<head>
 		<title>Change Data Restoran</title>
+		<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+		<object th:include="fragments/fragment :: js" th:remove="tag"></object>
 	</head>
 	
 	<body>
+		<nav th:replace="fragments/fragment :: navbar (brand='Change Restoran')"></nav>
+		<div class="container-fluid">
 		<h2>Change Data Restoran</h2>
 		<form th:action="@{/restoran/change/{idRestoran}(idRestoran=${restoran.idRestoran})}" th:object="${restoran}" method="POST">
 			<input type="hidden" th:field="${restoran.idRestoran}"/>
@@ -21,5 +25,6 @@
 			<br><br>
 			<button type="submit">Submit</button>
 		</form>
+		</div>
 	</body>
 </html>
