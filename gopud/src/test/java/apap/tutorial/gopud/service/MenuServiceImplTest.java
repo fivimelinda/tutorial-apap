@@ -96,6 +96,24 @@ public class MenuServiceImplTest {
 	}
 	
 	@Test
+	public void whenChangeMenuCalledItShouldThrowNullPointerException() {
+		MenuModel updatedData = new MenuModel();
+		updatedData.setNama("bebek");
+		updatedData.setHarga(BigInteger.valueOf(17000));
+		updatedData.setDurasiMasak(6);
+		updatedData.setDeskripsi("goreng");
+		updatedData.setId((long)1);
+		
+		when(menuDb.findById(1L)).thenReturn(Optional.of(updatedData));
+		
+		when(menuService.changeMenu(updatedData)).thenThrow(NullPointerException.class);
+		
+		MenuModel dataFromServiceCall = menuService.changeMenu(updatedData);
+		
+		assertEquals(null, dataFromServiceCall);
+	}
+	
+	@Test
 	public void whenDeleteMenuItShouldCallMenuRepositorySave() {
 		MenuModel newMenu = new MenuModel();
 		newMenu.setNama("ayam goreng");

@@ -118,4 +118,14 @@ public class RestoranControllerTest {
 		verify(restoranService, times(1)).getRestoranByIdRestoran(1L);
 	}
 	
+	@Test
+	public void whenViewRestoranAccessIdNotFoundItShouldShowRestoNotFoundPage() throws Exception {
+		when(restoranService.getRestoranByIdRestoran((long)1)).thenThrow(NullPointerException.class);
+	
+		mockMvc.perform(get("/restoran/view?idRestoran=1"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andExpect(content().string(Matchers.containsString("ERROR!")))
+		.andExpect(content().string(Matchers.containsString("Restoran atau Menu tidak ditemukan")));
+		verify(restoranService, times(1)).getRestoranByIdRestoran(1L);
+	}
 }

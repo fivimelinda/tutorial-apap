@@ -34,3 +34,9 @@ diakses?
 4. contoh penggunaan <br>
 `<form th:action="@{/restoran/add}" th:object="${restoran}" method="POST">` <br>
 th:object digunakan untuk menentukan objek tempat data akan diletakkan
+
+**Jawaban Pertanyaan Tutorial 5:**
+1.
+2. Line coverage adalah jumlah baris/statement yang dieksekusi pada test.
+<br> Sedangkan Logic coverage memeriksa semua kemungkinan yang terjadi (true atau false), untuk setiap kondisi minimal diperiksa satu kali.
+3. Unit test terlebih dahulu, karena dari test kita bisa mengetahui apa saja kemungkinan yang akan terjadi pada code yang kita buat sehingga dapat mencegah adanya error. Sedangkan bila dibuat code terlebih dahulu, akan ada kemungkinan ketika dilakukan test masih terdapat error sehingga code harus diperbaiki kembali.
