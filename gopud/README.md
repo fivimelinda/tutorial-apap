@@ -36,11 +36,11 @@ diakses?
 th:object digunakan untuk menentukan objek tempat data akan diletakkan
 
 **Jawaban Pertanyaan Tutorial 5:**
-1. given: `RestoranModel myResto = generateDummyRestoranModel(1);`
-<br>when: `when(restoranService.getRestoranByIdRestoran((long)1)).thenReturn(Optional.of(myResto));`<br>
+1. given: <br> `RestoranModel myResto = generateDummyRestoranModel(1);`
+<br>when: <br>`when(restoranService.getRestoranByIdRestoran((long)1)).thenReturn(Optional.of(myResto));`<br>
 `mockMvc.perform(get("/restoran/view?idRestoran=1"))`
 <br>then:
-`.andExpect(MockMvcResultMatchers.status().isOk())
+<br>`.andExpect(MockMvcResultMatchers.status().isOk())
 		.andExpect(content().string(Matchers.containsString("Informasi Restoran")))
 		.andExpect(content().string(Matchers.containsString("ID Restoran")))
 		.andExpect(model().attribute("resto", is(myResto)));
@@ -48,4 +48,13 @@ th:object digunakan untuk menentukan objek tempat data akan diletakkan
 
 2. Line coverage adalah jumlah baris/statement yang dieksekusi pada test.
 <br> Sedangkan Logic coverage memeriksa semua kemungkinan yang terjadi (true atau false), untuk setiap kondisi minimal diperiksa satu kali.
-3. Unit test terlebih dahulu, karena dari test kita bisa mengetahui apa saja kemungkinan yang akan terjadi pada code yang kita buat sehingga dapat mencegah adanya error. Sedangkan bila dibuat code terlebih dahulu, akan ada kemungkinan ketika dilakukan test masih terdapat error sehingga code harus diperbaiki kembali.
+3. Unit test terlebih dahulu, karena dari test kita bisa mengetahui apa saja kemungkinan yang akan terjadi pada code yang kita buat sehingga dapat mencegah adanya error. Selain itu dengan menulis test terlebih dahulu kita jadi tahu apa saja yang diharapkan dapat dikerjakan code yang kita buat sehingga akan menghindari feature creep. Sedangkan bila dibuat code terlebih dahulu, akan ada kemungkinan ketika dilakukan test masih terdapat error atau ada fitur yang terlewat sehingga code harus diperbaiki kembali, atau juga mengalami feature creep.
+<br>COVERAGE:
+<br>Sebelum menambahkan Test untuk MenuService
+![Menu Service Sebelum](menu-service-before.PNG)
+<br>Setelah menambahkan Test untuk MenuService
+![Menu Service Setelah](menu-service-after.PNG)
+<br>Sebelum menambahkan Test untuk view restoran by Id
+![Restoran View Sebelum](restoran-view-before.PNG)
+<br>Setelah menambahkan Test untuk view restoran by Id
+![Restoran View Setelah](restoran-view-after.PNG)
