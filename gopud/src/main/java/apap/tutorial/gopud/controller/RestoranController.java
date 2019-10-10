@@ -53,7 +53,7 @@ public class RestoranController {
 			//Request parameter untuk dipass
 			@RequestParam(value = "idRestoran") Long idRestoran, Model model
 			) {
-//		try {
+		try {
 			//Mengambil objek RestoranModel yang dituju
 			RestoranModel restoran = restoranService.getRestoranByIdRestoran(idRestoran).get();			
 			List<MenuModel> menuList = menuService.getListMenuOrderByHargaAsc(restoran.getIdRestoran()); /////
@@ -63,9 +63,9 @@ public class RestoranController {
 			model.addAttribute("resto", restoran);
 			model.addAttribute("isMenuListEmpty", menuList.isEmpty());
 			return "view-restoran";
-//		} catch (Exception e) {
-//			return "resto-not-found";
-//		}
+		} catch (Exception e) {
+			return "resto-not-found";
+		}
 		
 	}
 	
