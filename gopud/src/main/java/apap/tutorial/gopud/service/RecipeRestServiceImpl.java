@@ -18,6 +18,11 @@ public class RecipeRestServiceImpl implements RecipeRestService{
 	}
 	
 	@Override
+	public Mono<ResultDetail> retrieveListRecipe(){
+		return null;
+	}
+	
+	@Override
 	public Mono<ResultDetail> getRecipe(String excludeIngredient){
 		return this.webClient.get().uri("?excludeIngredients=" + excludeIngredient).retrieve().bodyToMono(ResultDetail.class);
 	}

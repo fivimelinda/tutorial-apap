@@ -11,7 +11,7 @@ public class RecipeDetail {
     private String title;
 
     @JsonProperty("readyInMinutes")
-    private Integer readyInServing;
+    private Integer readyInMinutes;
 
     @JsonProperty("servings")
     private Integer servings;
@@ -32,12 +32,12 @@ public class RecipeDetail {
         this.title = title;
     }
 
-    public Integer getReadyInServing() {
-        return readyInServing;
+    public Integer getReadyInMinutes() {
+        return readyInMinutes;
     }
 
-    public void setReadyInServing(Integer readyInServing) {
-        this.readyInServing = readyInServing;
+    public void setReadyInMinutes(Integer readyInMinutes) {
+        this.readyInMinutes= readyInMinutes;
     }
 
     public Integer getServings() {

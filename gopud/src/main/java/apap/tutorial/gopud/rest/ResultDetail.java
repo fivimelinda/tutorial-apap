@@ -9,13 +9,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ResultDetail {
 
     @JsonProperty("results")
-    private List<ResultDetail> listResultDetails;
+    private List<RecipeDetail> listRecipeDetails;
 
-    public List<ResultDetail> getListResultDetails() {
-        return listResultDetails;
+    public List<RecipeDetail> getListRecipeDetails() {
+        return listRecipeDetails;
     }
 
-    public void setListResultDetails(List<ResultDetail> listResultDetails) {
-        this.listResultDetails = listResultDetails;
+    public void setListRecipeDetails(List<RecipeDetail> listRecipeDetails) {
+        this.listRecipeDetails = listRecipeDetails;
     }
 }
