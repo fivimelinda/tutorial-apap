@@ -49,7 +49,7 @@ public class MenuController {
 	@RequestMapping(value ="menu/change/{idMenu}", method = RequestMethod.GET)
 	public String changeMenuFormPage(@PathVariable Long idMenu, Model model) {
 		//mengambil existing data restoran
-		MenuModel existingMenu = menuService.getMenuByIdMenu(idMenu).get(); //GIMANA CARANYA DPT MENUNYA
+		MenuModel existingMenu = menuService.getMenuByIdMenu(idMenu).get(); 
 		model.addAttribute("menu", existingMenu);
 		return "form-change-menu";
 	}
