@@ -58,3 +58,8 @@ th:object digunakan untuk menentukan objek tempat data akan diletakkan
 ![Restoran View Sebelum](restoran-view-before.PNG)
 <br>Setelah menambahkan Test untuk view restoran by Id
 ![Restoran View Setelah](restoran-view-after.PNG)
+
+**Jawaban Tutorial 6**
+1. Postman adalah aplikasi untuk browser chrome yang berfungsi sebagai REST Client atau aplikasi yang digunakan untuk uji coba API yang telah dibuat. Fungsi utama postman ini adalah sebagai GUI API Caller namun sekarang postman juga menyadiakan fitur lain yaitu Sharing Collection API for Documentation (free), Testing API (free), Realtime Collaboration Team (paid), Monitoring API (paid), Integration (paid).
+2. Anotasi JsonIgnoreProperties dapat digunakan untuk menekan serialisasi properti (selama serialisasi), atau mengabaikan pemrosesan properti JSON yang dibaca (saat deserialisasi).
+3. ResponseEntity mewakili seluruh respons HTTP: kode status, header, dan body. Karena itu, kita dapat menggunakannya untuk mengkonfigurasi respons HTTP sepenuhnya.
