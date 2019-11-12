@@ -24,13 +24,22 @@ public class UserController {
 	private RoleService roleService;
 	
 	@RequestMapping(value="/addUser", method = RequestMethod.POST)
-	private String addUserSubmit(@ModelAttribute UserModel user, Model model) {
-		if(userService.validPass(user.getPassword())) {
-			userService.addUser(user);
-			model.addAttribute("message", "User baru berhasil ditambahkan!");
+	private String addUserSubmit(@ModelAttribute UserModel user, @ModelAttribute(value="konfirmasi") String konfirmasi, Model model) {
+		if (userService.getUserByUsername(user.getUsername())== null) {
+			if(user.getPassword().equals(konfirmasi)) {
+				if(userService.validPass(user.getPassword())) {
+					userService.addUser(user);
+					model.addAttribute("message", "User baru berhasil ditambahkan!");
+				} else {
+					model.addAttribute("message", "Password tidak valid! Harus mengandung angka, huruf, minimal 10 karakter");
+				}
+			} else {
+				model.addAttribute("message", "Konfirmasi password tidak sesuai");
+			}
 		} else {
-			model.addAttribute("message", "Password tidak valid! Harus mengandung angka, huruf, minimal 8 karakter");
+			model.addAttribute("message", "Username yang dimasukkan sudah digunakan");
 		}
+		
 		model.addAttribute("listRole", roleService.findAll());
 		return "home";
 

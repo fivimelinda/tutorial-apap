@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public boolean validPass(String pass) {
-		if(pass.length()<8||!pass.matches(".*\\d+.*")||!pass.matches(".*[a-zA-Z]+.*")) {
+		if(pass.length()<10||!pass.matches(".*\\d+.*")||!pass.matches(".*[a-zA-Z]+.*")) {
 			return false;
 		}
 		return true;
