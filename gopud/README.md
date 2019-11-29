@@ -83,3 +83,22 @@ Pada My favorite juga diubah fungsi yang dipanggil ketika di click menjadi handl
 ![show2](3.1.PNG)
 4. Pada latihan 4 membuat component EmptyState berisi kalimat yg akan ditampilkan jika list favorite kosong. Selanjutnya pada List.js membuat variabel content yang dipanggil dalam html. Kemudian diberikan condition jika items pada list kosong maka yang diassign sebagai variabel content adalah component EmptyState. Jika tidak kosong maka list items dimunculkan.<br>
 ![empty](4.PNG)
+
+##Jawaban Tutorial 9:
+1. Mengubah state nama, alamat, nomor telepon, dan rating restoran kosong kembali ketika menekan submit saat menambah atau mengedit restoran. Hal tersebut dilakukan agar ketika form dimunculkan kembali, maka nilai state sudah kosong sehingga input field menjadi kosong.
+2. JavaScript bersifat non blocking atau tidak menunggu suatu fungsi selesai untuk melanjutkan ke fungsi yang lain. Solusinya yaitu dengan menerapkan async-await. Apabila pada suatu fungsi ditambahkan kata kunci async di depannya, maka fungsi tersebut akan selalu menghasilkan return dalam bentuk Promise. Selanjutnya di dalam fungsi async ini, digunakan await,  maka akan menunggu sampai promise tersebut resolved.
+3. ![before](9.1.PNG)
+<br>
+![after](9.2.PNG)
+
+4. Fase Mounting adalah fase ketika components di buat atau pertama kali di render ke DOM. `componentWillMount` adalah method yang akan di eksekusi pertama kali, kemudian akan mengeksekusi method render. Setelah method render di eksekusi baru kemudian mengeksekusi method `componentDidMount`. Akses dan manipulasi DOM di lakukan pada method ini, operasi lain seperti request data dari API semuanya dilakukan di sini. Contoh penggunaan componentDidMount yaitu merequest data dari API menggunkan Axios.
+<br><br>
+Fase updating adalah fase ketika sebuah component akan di render ulang, biasanya ini terjadi ketika ada perubahan pada state atau props yang mengakibatkan perubahan DOM. 
+<br>
+`shouldComponentUpdate` : tugasnya adalah untuk menentukan apakah sebuah component akan di render ulang atau tidak. Method ini akan mengembalikan nilai boolean true & false, jika true maka component akan di render ulang atau sebaliknya.
+<br>
+`componentWillReceiveProps` : fungsi ini akan di eksekusi bila state yang ada di component akan di update atau di ubah dengan nilai props yang baru.
+<br>
+'componentDidUpdate` : fungsinya sama dengan componentDidMount yaitu untuk manipulasi DOM dan request data.
+<br><br>
+Fase unmounting adalah fase ketika component di hapus dari DOM. Pada fase ini hanya ada satu method yang akan di eksekusi yaitu `componentWillUnmount`, yang di jalankan sebelum sebuah component di hapus dari DOM.
