@@ -88,9 +88,7 @@ Pada My favorite juga diubah fungsi yang dipanggil ketika di click menjadi handl
 1. Mengubah state nama, alamat, nomor telepon, dan rating restoran kosong kembali ketika menekan submit saat menambah atau mengedit restoran. Hal tersebut dilakukan agar ketika form dimunculkan kembali, maka nilai state sudah kosong sehingga input field menjadi kosong.
 2. JavaScript bersifat non blocking atau tidak menunggu suatu fungsi selesai untuk melanjutkan ke fungsi yang lain. Solusinya yaitu dengan menerapkan async-await. Apabila pada suatu fungsi ditambahkan kata kunci async di depannya, maka fungsi tersebut akan selalu menghasilkan return dalam bentuk Promise. Selanjutnya di dalam fungsi async ini, digunakan await,  maka akan menunggu sampai promise tersebut resolved.
 3. ![before](9.1.PNG)
-<br>
-![after](9.2.PNG)
-
+![pict 2](9.2.PNG)
 4. Fase Mounting adalah fase ketika components di buat atau pertama kali di render ke DOM. `componentWillMount` adalah method yang akan di eksekusi pertama kali, kemudian akan mengeksekusi method render. Setelah method render di eksekusi baru kemudian mengeksekusi method `componentDidMount`. Akses dan manipulasi DOM di lakukan pada method ini, operasi lain seperti request data dari API semuanya dilakukan di sini. Contoh penggunaan componentDidMount yaitu merequest data dari API menggunkan Axios.
 <br><br>
 Fase updating adalah fase ketika sebuah component akan di render ulang, biasanya ini terjadi ketika ada perubahan pada state atau props yang mengakibatkan perubahan DOM. 
