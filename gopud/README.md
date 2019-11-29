@@ -93,8 +93,8 @@ Pada My favorite juga diubah fungsi yang dipanggil ketika di click menjadi handl
 
 ![pict 2](9.2.PNG)
 4. Fase Mounting adalah fase ketika components di buat atau pertama kali di render ke DOM. `componentWillMount` adalah method yang akan di eksekusi pertama kali, kemudian akan mengeksekusi method render. Setelah method render di eksekusi baru kemudian mengeksekusi method `componentDidMount`. Akses dan manipulasi DOM di lakukan pada method ini, operasi lain seperti request data dari API semuanya dilakukan di sini. Contoh penggunaan componentDidMount yaitu merequest data dari API menggunkan Axios.
-Fase updating adalah fase ketika sebuah component akan di render ulang, biasanya ini terjadi ketika ada perubahan pada state atau props yang mengakibatkan perubahan DOM. 
+<br>Fase updating adalah fase ketika sebuah component akan di render ulang, biasanya ini terjadi ketika ada perubahan pada state atau props yang mengakibatkan perubahan DOM. 
 `shouldComponentUpdate` : tugasnya adalah untuk menentukan apakah sebuah component akan di render ulang atau tidak. Method ini akan mengembalikan nilai boolean true & false, jika true maka component akan di render ulang atau sebaliknya.
 `componentWillReceiveProps` : fungsi ini akan di eksekusi bila state yang ada di component akan di update atau di ubah dengan nilai props yang baru.
-'componentDidUpdate` : fungsinya sama dengan componentDidMount yaitu untuk manipulasi DOM dan request data.
-Fase unmounting adalah fase ketika component di hapus dari DOM. Pada fase ini hanya ada satu method yang akan di eksekusi yaitu `componentWillUnmount`, yang di jalankan sebelum sebuah component di hapus dari DOM.
+`componentDidUpdate` : fungsinya sama dengan componentDidMount yaitu untuk manipulasi DOM dan request data.
+<br>Fase unmounting adalah fase ketika component di hapus dari DOM. Pada fase ini hanya ada satu method yang akan di eksekusi yaitu `componentWillUnmount`, yang di jalankan sebelum sebuah component di hapus dari DOM.
