@@ -91,7 +91,6 @@ Pada My favorite juga diubah fungsi yang dipanggil ketika di click menjadi handl
 ![before](9.1.PNG)
 
 
-
 ![pict 2](9.2.PNG)
 4. Fase Mounting adalah fase ketika components di buat atau pertama kali di render ke DOM. `componentWillMount` adalah method yang akan di eksekusi pertama kali, kemudian akan mengeksekusi method render. Setelah method render di eksekusi baru kemudian mengeksekusi method `componentDidMount`. Akses dan manipulasi DOM di lakukan pada method ini, operasi lain seperti request data dari API semuanya dilakukan di sini. Contoh penggunaan componentDidMount yaitu merequest data dari API menggunkan Axios.
 Fase updating adalah fase ketika sebuah component akan di render ulang, biasanya ini terjadi ketika ada perubahan pada state atau props yang mengakibatkan perubahan DOM. 
