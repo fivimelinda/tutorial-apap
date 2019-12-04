@@ -1,0 +1,13 @@
+.PageNumberLayout {
+    color: #4CAF50;
+    font-weight: bold;
+    float: left;
+    padding: 5px 16px;
+    text-decoration: none;
+}
+.Page-item{
+    background-color: lightblue;
+    text-align: center;
+    background-color: #4CAF50;
+    margin-top: 0px;
+}
